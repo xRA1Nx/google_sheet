@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from parsers.sheet_pars import get_sheet_data
 from App.models import GoogleSheet
 # from telbot.botapp import bot_inform
+from bot.bot_app import bot_inform
 
 def checker() -> None:
     flag_need_inform = False  # флаг определяющий нужно ли Боту отправлять уведомление
@@ -49,6 +50,6 @@ def checker() -> None:
             obj.notify = True  # изменяем поле уведомления в заказе
             obj.save()
 
-    # if flag_need_inform:  # если есть заказы по которым нужно уведомить
-    #     bot_inform(message_inform)
+    if flag_need_inform:  # если есть заказы по которым нужно уведомить
+        bot_inform(message_inform)
     flag_need_inform = False  # возвращаем флаг в default
