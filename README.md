@@ -7,8 +7,8 @@
 <li>источник данных для парсинга (Google Sheets) - https://docs.google.com/spreadsheets/d/1D33t6I_5MeIvB-mhtv6BUjV6Wyhfxc6lufsUx51A1s8/edit#gid=0</li>
 </ul>
 
-<b>настройки</b>
-в файл .env необходимо заполнить своими настройками(secret key, token и т.д.) по примеру файла example.txt</br>
+<b>Настройки:</b><br>
+в файл .env необходимо заполнить своими настройками(secret key, token и т.д.) по примеру файла <b>example.txt<b></br>
 Также необходимо указать ID канала, куда бот будет отправлять сообщение(пример инструкции как можно узнать ID канала - https://smmx.ru/telegram/how-to-use/kak-uznat-id-kanala.html)</br>
 
 <b>Старт проекта</b>
