@@ -12,18 +12,18 @@
 Также необходимо указать ID канала, куда бот будет отправлять сообщение(пример инструкции как можно узнать ID канала - https://smmx.ru/telegram/how-to-use/kak-uznat-id-kanala.html)</br>
 
 <b>Старт проекта</b>
-docker-compose build
---предзапуск проекта (для применения миграций)--
-в 1-й консоли:
-docker-compose up
-во 2-й консоли:
-docker-compose run web python manage.py migrate
-docker-compose down
---ЗАПУСК ПРОЕКТА--
-в 1-й консоли (запуск приложения django):
-docker compose up
-во 2-й консоли (запускаем non stop parser):
-docker compose run web python manage.py runparser
+docker-compose build (создаем/импортируем образы) <br>
+--<b>предзапуск</b> проекта (для применения миграций)--<br>
+в 1-й консоли:<br>
+docker-compose up<br>
+во 2-й консоли:<br>
+docker-compose run web python manage.py migrate<br>
+docker-compose down<br>
+--ЗАПУСК ПРОЕКТА--<br>
+в 1-й консоли (запуск приложения django):<br>
+docker compose up<br>
+во 2-й консоли (запускаем non stop parser):<br>
+docker compose run web python manage.py runparser<br>
 
 <b>Краткое описание функционала:</b><br>
 
