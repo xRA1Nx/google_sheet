@@ -1,7 +1,6 @@
 SECRET_KEY = 'Ваш секретный ключ'
 
 HOST = 'localhost'
-POSTGRES_NAME = 'test'
 POSTGRES_DB = 'test'
 POSTGRES_USER = 'test'
 POSTGRES_PASSWORD = 'test'
