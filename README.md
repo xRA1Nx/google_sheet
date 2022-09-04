@@ -20,6 +20,10 @@ docker-compose build (создаем/импортируем образы) <br>
 docker-compose up<br>
 </li>
 </ol>
+<b>Дополнительно</b> <br>
+Проект также может быть запущен обычным путем:<br>
+python manage.py runserver<br>
+python manage.py runparser<br><br>
 
 <b>Урлы:</b><br>
 <ul>
