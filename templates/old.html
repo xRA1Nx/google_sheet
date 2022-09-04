@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Данные</title>
+</head>
+<body>
+<h1>Выгрузка из google-sheets</h1>
+<table>
+    <tr>
+        <th>№ заказа</th>
+        <th>Цена, $</th>
+        <th>Цена, руб.</th>
+        <th>срок поставки.</th>
+    </tr>
+    {% for row in page_obj %}
+    <tr>
+    <td>{{row.order}}</td>
+    <td>{{row.usd_price}}</td>
+    <td>{{row.rub_price}}</td>
+    <td>{{row.delivery_time|date:"d.m.Yг."}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% if page_obj.has_previous %}
+<a href = "?page=1">First</a>
+<a href = "?page={{ page_obj.previous_page_number }}"> << </a>
+{% endif %}
+<!-- список страниц в интервале +/- 3 -->
+{% for pag in page_obj.paginator.page_range%}
+{% if pag == page_obj.number%}
+<a>{{page_obj.number}}</a>
+{% elif pag > page_obj.number|add:-3 and pag < page_obj.number|add:3 %}
+<a href = "?page={{ pag }}">{{ pag }} </a>
+{% endif %}
+{% endfor %}
+
+<!-- Если доступна следующая страница, то даём ссылку на неё и самую последнюю страницу -->
+{% if page_obj.has_next %}
+<a href="?page={{ page_obj.next_page_number }}">>></a>
+<a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+
+
+</body>
+</html>
